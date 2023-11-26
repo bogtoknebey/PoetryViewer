@@ -1,0 +1,46 @@
+.control-block{
+    display: flex;
+    padding-left: 14.85%;
+}
+
+.send-btn{
+    cursor: grab;
+    height: 60px;
+    width: 200px;
+    font-size: larger;
+}
+.send-btn:active{
+    cursor: grab;
+    height: 60px;
+    width: 200px;
+    font-size: larger;
+    background-color: rgb(225, 229, 236);
+}
+.create-btn{
+    background-color: cornflowerblue;
+}
+.save-btn{
+    background-color: rgb(87, 129, 129);
+}
+.view-btn{
+    background-color: rgb(59, 163, 64);
+}
+
+.delete-img{
+    width: 55px;
+    height: 45px;
+}
+
+.fx-num-input{
+    width: 30px;
+    height: 20px;
+    font-size: x-large;
+    text-align: center;
+}
+
+.up-spn{
+    font-size: 18px;
+}
+.center{
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+<button (click)="deletePoetry()" [disabled]="!modifyMode" class="fx-btn r1-btn">
+    <img src="../../../assets/images/cross.png" class="delete-img" alt="button" />
+</button>
+<button (click)="multiAddRandomWord()" class="fx-btn r2-btn">
+    Multi Random
+</button>
+
+<button (click)="addRandomWord('local')" class="fx-btn l2-btn">
+    Local Random
+</button>
+<button (click)="addRandomWord('global')" class="fx-btn l3-btn">
+    Global Random
+</button>
+<div class="fx-btn l4-btn">
+    <div class="vr-div center">
+        <input type="checkbox" [(ngModel)]="dissMode">
+        {{dissName}} mode
+    </div>
+</div>
+
+<div class="fx-btn l2-subbtn hr-div center">
+    <span class="up-spn">Length</span>
+    <br>
+    <div class="vr-div">
+        <span class="fx-num-input" (click)="minLenAction('-')">-</span>
+        <input type="number" class="fx-num-input" min="1" max="10" [(ngModel)]="minLen" disabled>
+        <span class="fx-num-input" (click)="minLenAction('+')">+</span>
+    </div>
+</div>
+<div class="fx-btn l2-subsubbtn hr-div center">
+    <span class="up-spn">Count</span>
+    <br>
+    <div class="vr-div">
+        <span class="fx-num-input" (click)="randomWordsCountAction('-')">-</span>
+        <input type="number" class="fx-num-input" min="1" max="10" [(ngModel)]="randomWordsCount" disabled>
+        <span class="fx-num-input" (click)="randomWordsCountAction('+')">+</span>
+    </div>
+</div>
+
+<div class="main-block">
+    <h2 *ngIf="modifyMode">{{poetry.Name}}</h2>
+    <h2 *ngIf="!modifyMode">{{poetryName}}</h2>
+    <textarea [(ngModel)]="poetryText" (ngModelChange)="onTextChange()"></textarea>
+    <br>
+
+    <div class="control-block" *ngIf="!modifyMode">
+        <button class="send-btn create-btn" (click)="createPoetry()">Create</button>
+        <!-- <span>Creation</span> -->
+    </div>
+    <div class="control-block" *ngIf="modifyMode && !isSaved">
+        <button class="send-btn save-btn" (click)="updatePoetry()">Save</button>
+        <!-- <span>Modifying</span> -->
+    </div>
+    <div class="control-block" *ngIf="isSaved">
+        <button class="send-btn view-btn" (click)="switchView()">View</button>
+        <!-- <span>Saved</span> -->
+    </div>
+     
+</div>

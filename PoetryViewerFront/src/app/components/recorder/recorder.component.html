@@ -1,0 +1,11 @@
+<div class="record-block" *ngIf="author != '' && name != ''">
+    <button [ngClass]="(recording ? 'selected-btn' : '')" (click)="startRecording()" [disabled]="recording">
+        <img src="../../../assets/images/start_record.png" class="rec-img" alt="button" />
+    </button>
+    <button (click)="stopRecording()" [disabled]="!recording">
+        <img src="../../../assets/images/stop_record.png" class="rec-img" alt="button" />
+    </button>
+    <button [ngClass]="(sendedRecord ? 'sended-btn' : '')" (click)="saveRecording()" [disabled]="!hasRecord">
+        <img src="../../../assets/images/save_record.jpg" class="rec-img" alt="button" />
+    </button>
+</div>

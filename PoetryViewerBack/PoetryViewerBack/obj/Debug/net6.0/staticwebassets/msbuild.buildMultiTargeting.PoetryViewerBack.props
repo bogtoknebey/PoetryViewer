@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PoetryViewerBack.props" />
+</Project>

@@ -1,0 +1,21 @@
+<div class="main-block">
+    <h1 class="blue">Syntax analytics</h1>
+
+    <button class="get-button" (click)="loadSyntaxData()">Update</button>
+    <input type="number" class="num-input" [(ngModel)]="minLen">
+    
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th class="main-table-head-cell" scope="col">Word</th>
+                <th class="main-table-head-cell" scope="col">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of syntax.Inclusions | keyvalue: originalOrder">
+                <td class="main-table-cell">{{item.key}}</td>
+                <td class="main-table-cell">{{item.value}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

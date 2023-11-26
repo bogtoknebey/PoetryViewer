@@ -1,0 +1,32 @@
+<button (click)="playerRecordSwitch()" class="fx-btn l2-btn">
+    <img src="../../../assets/images/switch.png" class="fx-btn-img" alt="button" />
+</button>
+
+<button (click)="edit()" class="fx-btn r1-btn">
+    <img src="../../../assets/images/pen.png" class="fx-btn-img" alt="button" />
+</button>
+
+<div class="main-block" *ngIf="isLoad">
+    <img src="../../../assets/images/load.gif" width="30" height="30">
+</div>
+
+<div class="main-block" *ngIf="!isLoad">
+    <div *ngIf="!playerSwitch" class="sub-content-block">
+        <app-recorder [author]="selectedPoetry.Author" [name]="selectedPoetry.Name"></app-recorder>
+        <div>
+            <button class="get-button" (click)="randomFetch()">Random</button>
+            <input type="number" class="num-input" [(ngModel)]="selectedNum" (keyup.enter)="byNumberFetch()">
+        </div>
+    </div>
+    <div *ngIf="playerSwitch" class="sub-content-block">
+        <app-player [author]="selectedPoetry.Author" [poetryNum]="selectedPoetry.Name"></app-player>
+    </div>
+
+    <h2>{{selectedPoetry.Name}}</h2>
+    <div class="arrowed-block">
+        <div *ngIf="!playerSwitch" (click)="getPrev()" class="arrow left-arrow">&#9666;</div>
+        <pre class="text-block">{{selectedPoetry.Text}}</pre>
+        <div *ngIf="!playerSwitch" (click)="getNext()" class="arrow right-arrow">&#9656;</div>
+    </div>
+</div>
+

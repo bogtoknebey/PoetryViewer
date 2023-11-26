@@ -1,0 +1,22 @@
+<div>
+    <p class="c-header"> 
+        <span class="text-button" (click)="reset()">PoetryViewer</span>
+    </p>
+    <span><select class="fx-btn l1-btn" [(ngModel)]="selectedAuthor" (ngModelChange)="onAuthorSelect()">
+        <option *ngFor="let author of authors" [value]="author">{{ author }}</option>
+    </select></span>
+    <h2 class="fx-btn l1-subbtn">{{selectedAuthorPoetryCount}}</h2>
+
+</div>
+
+<div *ngIf="!(createView || randomView || syntaxView)" class="main-block">
+    <button class="super-button red" (click)="setCreateView()">Create</button>
+    <button class="super-button blue" (click)="setRandomView()">View</button>
+    <br>
+    <button class="super-bottom-button white" (click)="setSyntaxView()">Syntax</button>
+</div>
+<app-create-poetry [modifyMode]="createModifyMode" [author]="selectedAuthor" [poetry]="selectedPoetry" *ngIf="createView" (closeWithData)="createToView($event)"></app-create-poetry>
+<app-random-poetry [author]="selectedAuthor" [selectedNum]="name" *ngIf="randomView" (closeWithData)="viewToCreate($event)"></app-random-poetry>
+<app-syntax-poetry [author]="selectedAuthor" *ngIf="syntaxView"></app-syntax-poetry>
+
+<div class="footer-block"></div>

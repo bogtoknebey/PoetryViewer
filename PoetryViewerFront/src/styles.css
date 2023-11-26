@@ -1,0 +1,218 @@
+body{
+    user-select: none;
+}
+
+.c-header{
+    text-align: center;
+    font-size: xx-large;
+}
+.text-button{
+    cursor: grab;
+}
+.main-block{
+    /* height: 700px; */
+    text-align: center;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.super-bottom-button{
+    height: 210px;
+    width: 80%;
+    font-size: larger;
+}
+.super-button{
+    height: 280px;
+    width: 40%;
+    font-size: larger;
+}
+.green{
+    background-color: rgb(107, 124, 112);
+}
+.blue{
+    background-color: rgb(168, 168, 187);
+}
+.red{
+    background-color: rgb(197, 171, 171);
+}
+.gray{
+    background-color: rgb(241, 243, 248);
+}
+.white{
+    background-color: rgb(255, 255, 255);
+}
+textarea{
+    height: 350px;
+    width: 70%;
+    font-size: 20px;
+}
+.send-button{
+    cursor: grab;
+    height: 60px;
+    width: 200px;
+    font-size: larger;
+    background-color: cornflowerblue;
+}
+.send-button:active{
+    cursor: grab;
+    height: 60px;
+    width: 200px;
+    font-size: larger;
+    background-color: rgb(225, 229, 236);
+}
+.get-button{
+    cursor: grab;
+    height: 60px;
+    width: 200px;
+    font-size: larger;
+    background-color: rgb(169, 197, 175);
+}
+
+.rec-img{
+    width: 80px;
+    height: 60px;
+}
+.selected-btn{
+    border: 5px solid black;
+    background-color: red;
+}
+.sended-btn{
+    background-color: greenyellow;
+}
+
+.num-input{
+    width: 100px;
+    height: 50px;
+    font-size: x-large;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main-table{
+    text-align: center;
+    font-size: 22px;
+    border: 2px solid black;
+    margin: 0 auto; /* Center the table horizontally */
+    margin-top: 10px; /* Adjust the top margin for vertical centering */
+}
+.main-table-cell{
+    text-align: left;
+    border: 2px solid black;
+}
+.main-table-head-cell{
+    background-color: rgb(168, 168, 187);
+    font-size: 30px;
+    border: 2px solid black;
+}
+
+
+.fx-btn{
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    font-size: 18px;
+    top: 0;
+    margin: 10px;
+    outline: none;
+}
+.fx-btn-img
+{
+    width: 80px;
+    height: 60px;
+}
+.l1-btn
+{
+    left: 0;
+}
+.r1-btn
+{
+    right: 0;
+}
+.l2-btn
+{
+    left: 0;
+    top: 65px;
+}
+.r2-btn
+{
+    right: 0;
+    top: 65px;
+}
+.l3-btn
+{
+    left: 0;
+    top: 130px;
+}
+.r3-btn
+{
+    right: 0;
+    top: 130px;
+}
+.l4-btn
+{
+    left: 0;
+    top: 195px;
+}
+.r4-btn
+{
+    right: 0;
+    top: 195px;
+}
+.l1-subbtn
+{
+    left: 115px;
+}
+.l2-subbtn
+{
+    left: 115px;
+    top: 65px;
+}
+.l3-subbtn
+{
+    left: 115px;
+    top: 130px;
+}
+.l1-subsubbtn
+{
+    left: 230px;
+}
+.l2-subsubbtn
+{
+    left: 230px;
+    top: 65px;
+}
+
+
+.footer-block{
+    /* background-color: bisque; */
+    height: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.vr-div{
+    display: flex;
+}
+.hr-div{
+    display: block;
+}
+
