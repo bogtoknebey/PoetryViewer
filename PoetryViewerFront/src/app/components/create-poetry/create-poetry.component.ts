@@ -25,6 +25,9 @@ export class CreatePoetryComponent implements OnInit {
   randomWordsCount: number = 1;
   dissMode: boolean = false;
 
+  shakeAble: boolean = true;
+  shakesCount: number = 0;
+
   constructor(private http: HttpClient) {
 
   }
@@ -211,6 +214,7 @@ export class CreatePoetryComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+
   minLenAction(action: string){
     const min = 1;
     const max = 10;
@@ -239,7 +243,38 @@ export class CreatePoetryComponent implements OnInit {
       }
     }
   }
+  shakesCountAction(action: string){
+    const min = 0;
+    const max = 10;
+
+    if (action == '+'){
+      if (this.shakesCount < max){
+        this.shakesCount += 2;
+      }
+    }else if (action == '-'){
+      if (this.shakesCount > min){
+        this.shakesCount -= 2;
+      }
+    }
+  }
 
 
+  translateShaker(){
+    if(this.shakesCount == 0 || this.poetryText == "") 
+      return;
+    this.shakeAble = false;
+    let o = { Text: this.poetryText, SwitchTimes: this.shakesCount}
+    this.http.post(`${this.baseUrl}/poetry/translate`, o)
+    .subscribe(
+      (response: any) => {
+        this.poetryText = response;
+        this.shakeAble = true;
+      },
+      error => {
+        console.error('Error fetching data:', error);
+        this.shakeAble = true;
+      } 
+    );
+  }
 }
 

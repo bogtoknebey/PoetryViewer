@@ -5,6 +5,9 @@
 <button (click)="edit()" class="fx-btn r1-btn">
     <img src="../../../assets/images/pen.png" class="fx-btn-img" alt="button" />
 </button>
+<button (click)="addAutoAudio()" class="fx-btn r1-subbtn" [disabled]="!autoAudioAble">
+    <img src="../../../assets/images/sound.png" class="fx-btn-img" alt="button" />
+</button>
 
 <div class="main-block" *ngIf="isLoad">
     <img src="../../../assets/images/load.gif" width="30" height="30">

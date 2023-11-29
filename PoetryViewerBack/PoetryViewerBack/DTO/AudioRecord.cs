@@ -1,7 +1,22 @@
 ﻿namespace PoetryViewerBack.DTO;
+
+using Microsoft.VisualBasic;
 using PoetryViewerBack.Models;
+using NAudio.Wave;
 public static class AudioRecord
 {
+    public static bool CreateWavFile(string filePath, byte[] audioData, int sampleRate = 44100, int channels = 2, int bitDepth = 16)
+    {
+        try
+        {
+            using (WaveFileWriter waveFileWriter = new WaveFileWriter(filePath, new WaveFormat(sampleRate, bitDepth, channels)))
+            {
+                waveFileWriter.Write(audioData, 0, audioData.Length);
+            }
+            return true;
+        }
+        catch { return false; }
+    }
     public async static Task<List<AudioDataResponse>?> GetAudio(string author, string poetryNum, int pageCapacity, int pageNumber)
     {
         string path = $"data/{author}/{poetryNum}/audio";
@@ -55,6 +70,27 @@ public static class AudioRecord
         }
         return true;
     }
+    public async static Task<bool> CreateAudio(Models.AudioRecordByte rec)
+    {
+        string path = $"data/{rec.Author}/{rec.PoetryNum}/audio";
+        path = DTO.Poetry.GetNextFilePath(path, "wav", "file");
+
+        if (rec.AudioData.Length == 0)
+            return false;
+
+        try
+        {
+            File.WriteAllBytes(path, rec.AudioData);
+        }
+        catch
+        {
+            return false;
+        }
+
+        return true;
+        //return CreateWavFile(path, rec.AudioData);
+    }
+
     public async static Task<bool> DeleteAudio(string author, string poetryName, string audioName)
     {
         string filePath = $"data/{author}/{poetryName}/audio/{audioName}";

@@ -193,6 +193,18 @@ input::-webkit-inner-spin-button {
     left: 230px;
     top: 65px;
 }
+.r1-subbtn
+{
+    right: 115px;
+}
+.r2-subbtn{
+    right: 115px;
+    top: 65px;
+}
+.r2-subsubbtn{
+    right: 230px;
+    top: 65px;
+}
 
 
 .footer-block{

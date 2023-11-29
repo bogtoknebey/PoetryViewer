@@ -78,7 +78,7 @@ export class RecorderComponent implements OnInit {
         console.log('Audio uploaded successfully:', response);
       });
   }
-
+  
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     //this.recording

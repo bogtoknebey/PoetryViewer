@@ -20,7 +20,7 @@ export class RandomPoetryComponent implements OnInit {
   
   playerSwitch: boolean = false; 
   isLoad: boolean = false;
-
+  autoAudioAble: boolean = true;
 
   constructor(private http: HttpClient) {
 
@@ -82,7 +82,23 @@ export class RandomPoetryComponent implements OnInit {
       }
     );
   }
-  
+
+  addAutoAudio(){
+    this.autoAudioAble = false;
+
+    this.http.post(`${this.baseUrl}/voice/autocreate`, this.selectedPoetry)
+      .subscribe(
+        (response: any) => {
+          console.log('Audio uploaded successfully:', response);
+          this.autoAudioAble = true;
+        },
+        error => {
+          console.error('Error fetching data:', error);
+          this.autoAudioAble = true;
+        }
+      );
+  }
+
   getNext(){
     if(this.playerSwitch) return;
     if (this.selectedPoetry.Text != ""){

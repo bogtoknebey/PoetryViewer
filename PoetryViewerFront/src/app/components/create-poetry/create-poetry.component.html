@@ -1,9 +1,24 @@
 <button (click)="deletePoetry()" [disabled]="!modifyMode" class="fx-btn r1-btn">
     <img src="../../../assets/images/cross.png" class="delete-img" alt="button" />
 </button>
-<button (click)="multiAddRandomWord()" class="fx-btn r2-btn">
+<button (click)="translateShaker()" class="fx-btn r2-btn" [disabled]="!shakeAble">
+    Shake
+</button>
+<button (click)="multiAddRandomWord()" class="fx-btn r3-btn">
     Multi Random
 </button>
+<div class="fx-btn r2-subbtn hr-div center">
+    <span class="up-spn">Shakes</span>
+    <br>
+    <div class="vr-div">
+        <span class="fx-num-input" (click)="shakesCountAction('-')">-</span>
+        <input type="number" class="fx-num-input" min="0" max="10" [(ngModel)]="shakesCount" disabled>
+        <span class="fx-num-input" (click)="shakesCountAction('+')">+</span>
+    </div>
+</div>
+
+
+
 
 <button (click)="addRandomWord('local')" class="fx-btn l2-btn">
     Local Random
@@ -17,9 +32,11 @@
         {{dissName}} mode
     </div>
 </div>
+<div>
+
 
 <div class="fx-btn l2-subbtn hr-div center">
-    <span class="up-spn">Length</span>
+    <span class="up-spn">Minimum</span>
     <br>
     <div class="vr-div">
         <span class="fx-num-input" (click)="minLenAction('-')">-</span>
@@ -28,7 +45,7 @@
     </div>
 </div>
 <div class="fx-btn l2-subsubbtn hr-div center">
-    <span class="up-spn">Count</span>
+    <span class="up-spn">Words</span>
     <br>
     <div class="vr-div">
         <span class="fx-num-input" (click)="randomWordsCountAction('-')">-</span>

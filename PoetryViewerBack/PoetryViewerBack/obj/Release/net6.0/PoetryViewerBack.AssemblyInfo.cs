@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PoetryViewerBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aae8d6d0c507b81809272f6cadfbaad733f0e336")]
 [assembly: System.Reflection.AssemblyProductAttribute("PoetryViewerBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PoetryViewerBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
